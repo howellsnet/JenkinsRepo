@@ -1,0 +1,16 @@
+pipeline {
+    agent {
+        label 'master'
+    }
+    stages {
+        stage('MAKE DIRECTORY') {
+            steps {
+                sh """
+                mkdir /tmp/pipeline
+                touch /tmp/pipefile
+                cp /tmp/pipefile /tmp/pipeline
+                """
+            }
+        }
+    }
+}
